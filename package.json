@@ -1,0 +1,26 @@
+{
+  "name": "holidays",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab --coverage --threshold 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wegolook/holidays.git"
+  },
+  "author": "WeGoLook, LLC <dev@wegolook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wegolook/holidays/issues"
+  },
+  "homepage": "https://github.com/wegolook/holidays#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "lab": "^5.13.0"
+  },
+  "dependencies": {
+    "moment": "^2.10.3"
+  }
+}
