@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "lab --assert code --coverage --threshold 100"
+    "test": "lab --assert code --coverage --threshold 100 --lint"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,8 @@
   },
   "homepage": "https://github.com/wegolook/holidays#readme",
   "devDependencies": {
-    "chai": "^3.2.0",
     "code": "^2.1.0",
-    "lab": "^5.13.0"
+    "lab": "^8.0.2"
   },
   "dependencies": {
     "moment": "^2.10.3"

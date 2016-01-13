@@ -1,10 +1,11 @@
-var Holidays = require('../');
-var Moment = require('moment');
-var expect = require('code').expect;
-var Lab = require('lab');
-exports.lab = Lab.script();
-var experiment = exports.lab.experiment;
-var test = exports.lab.test;
+'use strict';
+
+const Holidays = require('../');
+const Moment = require('moment');
+const expect = require('code').expect;
+const lab = exports.lab = require('lab').script();
+const experiment = lab.experiment;
+const test = lab.test;
 
 experiment('Holidays', function() {
   test('January 1, 2015 is a holiday', function(done) {
