@@ -37,6 +37,9 @@ const isMemorialDay = date => {
 // July 4
 const isIndependenceDay = date => date.month() === 6 && date.date() === 4;
 
+const isMonday = date => Moment(date).day() === 1;
+const isFriday = date => Moment(date).day() === 5;
+
 const isMondayFollowingHoliday = date => {
 
   if (isMonday(date)) {
@@ -64,10 +67,6 @@ const isFridayPrecedingHoliday = date => {
 
   return false;
 };
-
-const isMonday = date => Moment(date).day() === 1;
-
-const isFriday = date => Moment(date).day() === 5;
 
 const isHoliday = date => !!(
   isNewYears(date) ||
