@@ -41,11 +41,11 @@ const isMondayFollowingHoliday = date => {
 
   if (isMonday(date)) {
 
-    const tomorrow = Moment(date).subtract(1, 'day');
+    const yesterday = Moment(date).subtract(1, 'day');
 
-    return isNewYears(tomorrow)
-      || isChristmas(tomorrow)
-      || isIndependenceDay(tomorrow);
+    return isNewYears(yesterday)
+      || isChristmas(yesterday)
+      || isIndependenceDay(yesterday);
   }
 
   return false;
@@ -55,11 +55,11 @@ const isFridayPrecedingHoliday = date => {
 
   if (isFriday(date)) {
 
-    const yesterday = Moment(date).add(1, 'day');
+    const tomorrow = Moment(date).add(1, 'day');
 
-    return isNewYears(yesterday)
-      || isChristmas(yesterday)
-      || isIndependenceDay(yesterday);
+    return isNewYears(tomorrow)
+      || isChristmas(tomorrow)
+      || isIndependenceDay(tomorrow);
   }
 
   return false;
