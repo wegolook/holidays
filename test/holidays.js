@@ -157,4 +157,34 @@ experiment('Holidays', function() {
     expect(Holidays.isHoliday(Moment('2014-11-26'))).to.be.false();
     done();
   });
+
+  test('July 3, 2015 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2015-07-03'))).to.be.true();
+    done();
+  });
+
+  test('July 5, 2010 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2010-07-05'))).to.be.true();
+    done();
+  });
+
+  test('December 31, 2021 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2021-12-31'))).to.be.true();
+    done();
+  });
+
+  test('January 2, 2017 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2017-01-02'))).to.be.true();
+    done();
+  });
+
+  test('December 24, 2010 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2010-12-24'))).to.be.true();
+    done();
+  });
+
+  test('December 26, 2016 is a holiday', function(done) {
+    expect(Holidays.isHoliday(Moment('2016-12-26'))).to.be.true();
+    done();
+  });
 });

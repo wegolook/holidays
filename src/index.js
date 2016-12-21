@@ -14,7 +14,11 @@ const isThanksgiving = date => {
 };
 
 // December 25
-const isChristmas = date => date.month() === 11 && date.date() === 25;
+const isChristmas = date => {
+  if (date.month() === 11 && date.date() === 25) {
+    return true;
+  }
+};
 
 // First Monday of September
 const isLaborDay = date => {
@@ -33,13 +37,46 @@ const isMemorialDay = date => {
 // July 4
 const isIndependenceDay = date => date.month() === 6 && date.date() === 4;
 
+const isMonday = date => Moment(date).day() === 1;
+const isFriday = date => Moment(date).day() === 5;
+
+const isMondayFollowingHoliday = date => {
+
+  if (isMonday(date)) {
+
+    const yesterday = Moment(date).subtract(1, 'day');
+
+    return isNewYears(yesterday)
+      || isChristmas(yesterday)
+      || isIndependenceDay(yesterday);
+  }
+
+  return false;
+};
+
+const isFridayPrecedingHoliday = date => {
+
+  if (isFriday(date)) {
+
+    const tomorrow = Moment(date).add(1, 'day');
+
+    return isNewYears(tomorrow)
+      || isChristmas(tomorrow)
+      || isIndependenceDay(tomorrow);
+  }
+
+  return false;
+};
+
 const isHoliday = date => !!(
   isNewYears(date) ||
   isMemorialDay(date) ||
   isIndependenceDay(date) ||
   isLaborDay(date) ||
   isThanksgiving(date) ||
-  isChristmas(date)
+  isChristmas(date) ||
+  isMondayFollowingHoliday(date) ||
+  isFridayPrecedingHoliday(date)
 );
 
 module.exports = {
