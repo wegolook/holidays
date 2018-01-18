@@ -14,6 +14,7 @@ If New Year’s, Independence Day, or Christmas falls on a weekend, the closest 
 ## Usage
 
 ```
+var moment = require('moment');
 var Holidays = require('wgl-holidays');
-Holidays.isHoliday(new Date());
+Holidays.isHoliday(moment(new Date()));
 ```
